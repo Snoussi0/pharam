@@ -80,3 +80,10 @@ C:\Users\SNOUSSI\source\repos\PHARAM\PHARAM\obj\Debug\PHARAM.csprojAssemblyRefer
 C:\Users\SNOUSSI\source\repos\PHARAM\PHARAM\obj\Debug\PHARAM.csproj.CopyComplete
 C:\Users\SNOUSSI\source\repos\PHARAM\PHARAM\obj\Debug\PHARAM.dll
 C:\Users\SNOUSSI\source\repos\PHARAM\PHARAM\obj\Debug\PHARAM.pdb
+C:\Users\SNOUSSI\source\repos\PHARAM\PHARAM\bin\EntityFramework.dll
+C:\Users\SNOUSSI\source\repos\PHARAM\PHARAM\bin\EntityFramework.SqlServer.dll
+C:\Users\SNOUSSI\source\repos\PHARAM\PHARAM\bin\EntityFramework.xml
+C:\Users\SNOUSSI\source\repos\PHARAM\PHARAM\bin\EntityFramework.SqlServer.xml
+C:\Users\SNOUSSI\source\repos\PHARAM\PHARAM\obj\Debug\PHARAM.Migrations.InitialPharmacie.resources
+C:\Users\SNOUSSI\source\repos\PHARAM\PHARAM\obj\Debug\PHARAM.csproj.GenerateResource.cache
+C:\Users\SNOUSSI\source\repos\PHARAM\PHARAM\obj\Debug\PHARAM.Migrations.secondMigration.resources

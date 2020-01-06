@@ -27,8 +27,6 @@
                 <ul>
                     <li class="menu_item">@Html.ActionLink("Home", "Index")</li>
                     <li class="menu_item">@Html.ActionLink("About us", "About")</li>
-                    <li class="menu_item"><a href="#">Services</a></li>
-                    <li class="menu_item"><a href="news.html">News</a></li>
                     <li class="menu_item">@Html.ActionLink("Contact", "Contact")</li>
                 </ul>
             </div>
@@ -90,14 +88,23 @@
                             <div class="footer_contact">
                                 <div class="footer_contact_title">Quick Contact</div>
                                 <div class="footer_contact_form_container">
-                                    <form action="#" class="footer_contact_form" id="footer_contact_form">
+                                    @using (Html.BeginForm("Mail", "Home", FormMethod.Post, new { @id = "footer_contact_form", @class = "footer_contact_form", enctype = "multipart/form-data" }))
+                                    {
+
                                         <div class="d-flex flex-xl-row flex-column align-items-center justify-content-between">
-                                            <input type="text" class="footer_contact_input" placeholder="Name" required="required">
-                                            <input type="email" class="footer_contact_input" placeholder="E-mail" required="required">
+                                            <input type="text" class="footer_contact_input" name="Name" placeholder="Name" required="required">
+                                            <input type="email" class="footer_contact_input" name="E-mail" placeholder="E-mail" required="required">
                                         </div>
-                                        <textarea class="footer_contact_input footer_contact_textarea" placeholder="Message" required="required"></textarea>
+                                        <textarea class="footer_contact_input footer_contact_textarea" name="Message" placeholder="Message" required="required"></textarea>
                                         <button class="footer_contact_button">send message</button>
-                                    </form>
+
+
+                                    }
+
+
+
+                                  <!--  <form action="" method="post" class="footer_contact_form" id="footer_contact_form">
+                                    </form> -->
                                 </div>
                             </div>
                         </div>
@@ -138,8 +145,6 @@
                                     <ul class="d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
                                         <li class="active">@Html.ActionLink("Home", "Index")</li>
                                         <li>@Html.ActionLink("About US", "About")</li>
-                                        <li><a href="services.html">Services</a></li>
-                                        <li><a href="news.html">News</a></li>
                                         <li>@Html.ActionLink("Contact", "Contact")</li>
                                     </ul>
                                 </nav>

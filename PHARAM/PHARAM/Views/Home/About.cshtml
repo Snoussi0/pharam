@@ -157,8 +157,8 @@
                 <div class="milestone d-flex flex-row align-items-center justify-content-start">
                     <div class="milestone_icon d-flex flex-column align-items-center justify-content-center"><img src="~/Content/images/icon_8.svg" alt=""></div>
                     <div class="milestone_content">
-                        <div class="milestone_counter" data-end-value="125">0</div>
-                        <div class="milestone_text">Amazing Doctors</div>
+                        <div class="milestone_counter" data-end-value="@Model.Count">0</div>
+                        <div class="milestone_text">Amazing Pharmacies</div>
                     </div>
 
                 </div>
@@ -205,114 +205,47 @@
     <div class="container">
         <div class="row">
             <div class="col text-center">
-                <div class="section_title">Our Doctors</div>
+                <div class="section_title">Our Pharmacies</div>
                 <div class="section_subtitle">to choose from</div>
             </div>
         </div>
         <div class="row doctors_row">
 
             <!-- Doctor -->
+            @foreach (var pharmacie in Model)
+            {
+                
+
             <div class="col-xl-3 col-md-6">
                 <div class="doctor">
-                    <div class="doctor_image"><img src="~/Content/images/doc_1.jpg" alt=""></div>
+                    <div class="doctor_image"><img src="~/Content/images/pharmacie.jpg" alt=""></div>
                     <div class="doctor_content">
-                        <div class="doctor_name"><a href="#">Michael Smith</a></div>
-                        <div class="doctor_title">Surgeon</div>
-                        <div class="doctor_link"><a href="#">+</a></div>
+                        <div class="doctor_name"><a href="#">
+    @if (pharmacie.Nuit == false)
+    {
+        <img src="~/Content/images/moon.svg" alt="" style="width:17px">
+    }
+    else
+    {
+        <img src="~/Content/images/sun.svg" alt="" style="width:17px">
+    }@pharmacie.Nom
+</a></div>
+                        <div class="doctor_title">@pharmacie.Mail</div>
+
+                      
+
+                        <div class="doctor_link">
+                            <a href="@Url.Action("Map",
+                            "Home",
+                            new { lat = pharmacie.Latitude, lon = pharmacie.Longitude ,name=pharmacie.Nom})"><img src="~/Content/images/placeholder.svg" alt="" style="width:20px"></a>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Doctor -->
-            <div class="col-xl-3 col-md-6">
-                <div class="doctor">
-                    <div class="doctor_image"><img src="~/Content/images/doc_2.jpg" alt=""></div>
-                    <div class="doctor_content">
-                        <div class="doctor_name"><a href="#">Christian Williams</a></div>
-                        <div class="doctor_title">Surgeon</div>
-                        <div class="doctor_link"><a href="#">+</a></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Doctor -->
-            <div class="col-xl-3 col-md-6">
-                <div class="doctor">
-                    <div class="doctor_image"><img src="~/Content/images/doc_3.jpg" alt=""></div>
-                    <div class="doctor_content">
-                        <div class="doctor_name"><a href="#">Jessica Walsh</a></div>
-                        <div class="doctor_title">Surgeon</div>
-                        <div class="doctor_link"><a href="#">+</a></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Doctor -->
-            <div class="col-xl-3 col-md-6">
-                <div class="doctor">
-                    <div class="doctor_image"><img src="~/Content/images/doc_4.jpg" alt=""></div>
-                    <div class="doctor_content">
-                        <div class="doctor_name"><a href="#">Martha James</a></div>
-                        <div class="doctor_title">Surgeon</div>
-                        <div class="doctor_link"><a href="#">+</a></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Doctor -->
-            <div class="col-xl-3 col-md-6">
-                <div class="doctor">
-                    <div class="doctor_image"><img src="~/Content/images/doc_5.jpg" alt=""></div>
-                    <div class="doctor_content">
-                        <div class="doctor_name"><a href="#">Michael Smith</a></div>
-                        <div class="doctor_title">Surgeon</div>
-                        <div class="doctor_link"><a href="#">+</a></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Doctor -->
-            <div class="col-xl-3 col-md-6">
-                <div class="doctor">
-                    <div class="doctor_image"><img src="~/Content/images/doc_6.jpg" alt=""></div>
-                    <div class="doctor_content">
-                        <div class="doctor_name"><a href="#">Christina Smith</a></div>
-                        <div class="doctor_title">Laboratory</div>
-                        <div class="doctor_link"><a href="#">+</a></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Doctor -->
-            <div class="col-xl-3 col-md-6">
-                <div class="doctor">
-                    <div class="doctor_image"><img src="~/Content/images/doc_7.jpg" alt=""></div>
-                    <div class="doctor_content">
-                        <div class="doctor_name"><a href="#">Jessica Walsh</a></div>
-                        <div class="doctor_title">Pediatrist</div>
-                        <div class="doctor_link"><a href="#">+</a></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Doctor -->
-            <div class="col-xl-3 col-md-6">
-                <div class="doctor">
-                    <div class="doctor_image"><img src="~/Content/images/doc_8.jpg" alt=""></div>
-                    <div class="doctor_content">
-                        <div class="doctor_name"><a href="#">Martha James</a></div>
-                        <div class="doctor_title">Eye Doctor</div>
-                        <div class="doctor_link"><a href="#">+</a></div>
-                    </div>
-                </div>
-            </div>
-
+            }
+           
         </div>
-        <div class="row">
-            <div class="col">
-                <div class="button doctors_button ml-auto mr-auto"><a href="#"><span>see all doctors</span><span>see all doctors</span></a></div>
-            </div>
-        </div>
+       
     </div>
 </div>
 
